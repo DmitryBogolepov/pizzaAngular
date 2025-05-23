@@ -1,0 +1,18 @@
+
+<div class="product">
+  <ng-template [ngIf]="product.image">
+    <div class="product__img">
+      <img src="assets/images/{{product.image}}">
+    </div>
+  </ng-template>
+
+  <custom-title [title]="product.title | uppercase "></custom-title>
+
+  <div class="product__text">{{product.description | wordUpper:['томат','сыр', 'сос']}}</div>
+  <div class="product__action" #elem>
+    <a class="btn product__btn add-to-cart" routerLink="/order" [queryParams]="{product:product.title}" >В корзину</a>
+    <a class="btn product__btn btn-white" [routerLink]="['/products',product.id]" [queryParams]="{product:product.title}" >Подробнее</a>
+  </div>
+</div>
+
+

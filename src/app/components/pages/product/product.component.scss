@@ -1,0 +1,10 @@
+.product-items {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.product-items > * {
+  display: block;
+  margin-top: 10px;
+}

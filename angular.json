@@ -10,6 +10,9 @@
           "style": "scss"
         }
       },
+      "i18n": {
+        "sourceLocale": "ru"
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -103,5 +106,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "f2a62f35-b2cf-4426-a24d-f055a263c838"
   }
 }
