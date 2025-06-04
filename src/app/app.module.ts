@@ -1,49 +1,40 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {FormsModule} from "@angular/forms";
-import { HeaderComponent } from './components/common/header/header.component';
-import { FooterComponent } from './components/common/footer/footer.component';
-import { ProductCardComponent } from './components/common/product-card/product-card.component';
-import { TitleComponent } from './components/common/title/title.component';
-import { CoolInputDirective } from './directives/cool-input.directive';
-import { ChickenDirective } from './directives/chicken.directive';
-import {ChickenDescriptionPipe} from './pipes/chicken-description.pipe';
-import { WordUpperPipe } from './pipes/word-upper.pipe';
-import { ChickenProductsPipe } from './pipes/chicken-products.pipe';
-import {ProductService} from "./services/product.service";
-import { MainComponent } from './components/pages/main/main.component';
-import { AboutComponent } from './components/pages/about/about.component';
-import { OrderComponent } from './components/pages/order/order.component';
-import { ProductsComponent } from './components/pages/products/products.component';
-import { ProductComponent } from './components/pages/product/product.component';
+import {HttpClientModule} from "@angular/common/http";
+import {CoreModule} from "./core/core.module";
+import {SharedModule} from "./shared/shared.module";
+import {FooterComponent} from "./shared/layout/footer/footer.component";
+import {HeaderComponent} from "./shared/layout/header/header.component";
+import {LayoutComponent} from "./views/layout.component";
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatMenuModule} from "@angular/material/menu";
+import {MatIconModule} from "@angular/material/icon";
+import {MatButtonModule} from "@angular/material/button";
 
+// @ts-ignore
 @NgModule({
   declarations: [
-    AppComponent,
-    HeaderComponent,
     FooterComponent,
-    ProductCardComponent,
-    TitleComponent,
-    CoolInputDirective,
-    ChickenDirective,
-    ChickenDescriptionPipe,
-    WordUpperPipe,
-    ChickenProductsPipe,
-    MainComponent,
-    AboutComponent,
-    OrderComponent,
-    ProductsComponent,
-    ProductComponent,
+    HeaderComponent,
+    AppComponent,
+    LayoutComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    HttpClientModule,
+    CoreModule,
+    SharedModule,
     AppRoutingModule,
-    FormsModule
+    BrowserAnimationsModule,
+    MatMenuModule,
+    MatIconModule,
+    MatButtonModule
   ],
-  providers: [ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
